@@ -35,13 +35,13 @@
 - (NSRect)contentRectForFrameRect:(NSRect)windowFrame
 {
 	windowFrame.origin = NSZeroPoint;
-	const CGFloat arrowHeight = self.frameView.arrowSize.height;
+	CGFloat arrowHeight = self.frameView.arrowSize.height;
 	return NSInsetRect(windowFrame, arrowHeight, arrowHeight);
 }
 
 - (NSRect)frameRectForContentRect:(NSRect)contentRect
 {
-	const CGFloat arrowHeight = self.frameView.arrowSize.height;
+	CGFloat arrowHeight = self.frameView.arrowSize.height;
 	return NSInsetRect(contentRect, -arrowHeight, -arrowHeight);
 }
 
@@ -88,6 +88,12 @@
 	[_popoverContentView setFrame:[self contentRectForFrameRect:bounds]];
 	[_popoverContentView setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
 	[frameView addSubview:_popoverContentView];
+}
+
+- (void)updateContentView {
+	NSRect bounds = [self frame];
+	bounds.origin = NSZeroPoint;
+	[_popoverContentView setFrame:[self contentRectForFrameRect:bounds]];
 }
 
 - (void)presentAnimated

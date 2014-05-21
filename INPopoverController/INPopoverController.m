@@ -63,6 +63,7 @@
 	INPopoverArrowDirection calculatedDirection = [self _arrowDirectionWithPreferredArrowDirection:direction]; // Calculate the best arrow direction
 	[self _setArrowDirection:calculatedDirection]; // Change the arrow direction of the popover
 	NSRect windowFrame = [self popoverFrameWithSize:self.contentSize andArrowDirection:calculatedDirection]; // Calculate the window frame based on the arrow direction
+	[_popoverWindow updateContentView];
 	[_popoverWindow setFrame:windowFrame display:YES]; // Se the frame of the window
 	[[_popoverWindow animationForKey:@"alphaValue"] setDelegate:self];
 

@@ -36,9 +36,9 @@
 		[path stroke];
 	}
 
-	const CGFloat arrowWidth = self.arrowSize.width;
-	const CGFloat arrowHeight = self.arrowSize.height;
-	const CGFloat radius = self.cornerRadius;
+	CGFloat arrowWidth = self.arrowSize.width;
+	CGFloat arrowHeight = self.arrowSize.height;
+	CGFloat radius = self.cornerRadius;
 
 	if (self.topHighlightColor) {
 		[self.topHighlightColor set];
@@ -60,15 +60,15 @@
 
 - (NSBezierPath *)_popoverBezierPathWithRect:(NSRect)aRect
 {
-	const CGFloat radius = self.cornerRadius;
-	const CGFloat arrowWidth = self.arrowSize.width;
-	const CGFloat arrowHeight = self.arrowSize.height;
-	const CGFloat inset = radius + arrowHeight;
-	const NSRect drawingRect = NSInsetRect(aRect, inset, inset);
-	const CGFloat minX = NSMinX(drawingRect);
-	const CGFloat maxX = NSMaxX(drawingRect);
-	const CGFloat minY = NSMinY(drawingRect);
-	const CGFloat maxY = NSMaxY(drawingRect);
+	CGFloat radius = self.cornerRadius;
+    CGFloat arrowWidth = self.arrowSize.width;
+	CGFloat arrowHeight = self.arrowSize.height;
+	CGFloat inset = radius + arrowHeight;
+	NSRect drawingRect = NSInsetRect(aRect, inset, inset);
+	CGFloat minX = NSMinX(drawingRect);
+	CGFloat maxX = NSMaxX(drawingRect);
+	CGFloat minY = NSMinY(drawingRect);
+	CGFloat maxY = NSMaxY(drawingRect);
 
 	NSBezierPath *path = [NSBezierPath bezierPath];
 	[path setLineJoinStyle:NSRoundLineJoinStyle];
