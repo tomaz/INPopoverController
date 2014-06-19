@@ -138,6 +138,14 @@
 		CGFloat xOrigin = NSMidX(_screenRect) - floor(windowFrame.size.width / 2.0);
 		CGFloat yOrigin = NSMinY(_screenRect) - windowFrame.size.height;
 		windowFrame.origin = NSMakePoint(xOrigin, yOrigin);
+	} else if (direction == INPopoverArrowDirectionUpLeft) {
+		CGFloat xOrigin = NSMinX(_screenRect) - self.arrowSize.width + 2;
+		CGFloat yOrigin = NSMinY(_screenRect) - windowFrame.size.height;
+		windowFrame.origin = NSMakePoint(xOrigin, yOrigin);
+	} else if (direction == INPopoverArrowDirectionUpRight) {
+		CGFloat xOrigin = NSMaxX(_screenRect) - windowFrame.size.width + self.arrowSize.width - 3;
+		CGFloat yOrigin = NSMinY(_screenRect) - windowFrame.size.height;
+		windowFrame.origin = NSMakePoint(xOrigin, yOrigin);
 	} else if (direction == INPopoverArrowDirectionDown) {
 		CGFloat xOrigin = NSMidX(_screenRect) - floor(windowFrame.size.width / 2.0);
 		windowFrame.origin = NSMakePoint(xOrigin, NSMaxY(_screenRect));

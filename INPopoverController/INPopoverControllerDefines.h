@@ -8,7 +8,9 @@ typedef NS_ENUM(NSRectEdge, INPopoverArrowDirection) {
 	INPopoverArrowDirectionLeft = NSMaxXEdge,
 	INPopoverArrowDirectionRight = NSMinXEdge,
 	INPopoverArrowDirectionUp = NSMaxYEdge,
-	INPopoverArrowDirectionDown = NSMinYEdge
+	INPopoverArrowDirectionDown = NSMinYEdge,
+	INPopoverArrowDirectionUpLeft = 100,
+	INPopoverArrowDirectionUpRight = 101
 };
 
 typedef NS_ENUM(NSInteger, INPopoverAnimationType) {
