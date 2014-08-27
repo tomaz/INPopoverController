@@ -296,6 +296,16 @@
 	_popoverWindow.frameView.arrowDirection = direction;
 }
 
+- (void)setWindowCanBecomeKey:(BOOL)windowCanBecomeKey
+{
+    _popoverWindow.canBecomeKeyWindow = windowCanBecomeKey;
+}
+
+- (BOOL)windowCanBecomeKey
+{
+    return _popoverWindow.canBecomeKeyWindow;
+}
+
 #pragma mark -
 #pragma mark Private
 
