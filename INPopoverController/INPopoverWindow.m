@@ -20,6 +20,8 @@
 	NSWindow *_zoomWindow;
 }
 
+@synthesize canBecomeKeyWindow = _canBecomeKeyWindow;
+
 // Borderless, transparent window
 - (id)initWithContentRect:(NSRect)contentRect styleMask:(NSUInteger)windowStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)deferCreation
 {

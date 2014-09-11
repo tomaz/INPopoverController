@@ -59,13 +59,13 @@
 	_positionView = positionView;
 	_viewRect = rect;
 	_screenRect = [positionView convertRect:rect toView:nil]; // Convert the rect to window coordinates
-	_screenRect.origin = [mainWindow convertBaseToScreen:_screenRect.origin]; // Convert window coordinates to screen coordinates
+	_screenRect.origin = [mainWindow convertRectToScreen:_screenRect].origin; // Convert window coordinates to screen coordinates
 	INPopoverArrowDirection calculatedDirection = [self _arrowDirectionWithPreferredArrowDirection:direction]; // Calculate the best arrow direction
 	[self _setArrowDirection:calculatedDirection]; // Change the arrow direction of the popover
 	NSRect windowFrame = [self popoverFrameWithSize:self.contentSize andArrowDirection:calculatedDirection]; // Calculate the window frame based on the arrow direction
 	[_popoverWindow updateContentView];
 	[_popoverWindow setFrame:windowFrame display:YES]; // Se the frame of the window
-	[[_popoverWindow animationForKey:@"alphaValue"] setDelegate:self];
+	[(CAAnimation *)[_popoverWindow animationForKey:@"alphaValue"] setDelegate:self];
 
 	// Show the popover
 	[self _callDelegateMethod:@selector(popoverWillShow:)]; // Call the delegate
@@ -400,7 +400,7 @@
 	}
 	NSRect newFrame = [_popoverWindow frame];
 	_screenRect = [self.positionView convertRect:_viewRect toView:nil]; // Convert the rect to window coordinates
-	_screenRect.origin = [[self.positionView window] convertBaseToScreen:_screenRect.origin]; // Convert window coordinates to screen coordinates
+	_screenRect.origin = [[self.positionView window] convertRectToScreen:_screenRect].origin; // Convert window coordinates to screen coordinates
 	NSRect calculatedFrame = [self popoverFrameWithSize:self.contentSize andArrowDirection:self.arrowDirection]; // Calculate the window frame based on the arrow direction
 	newFrame.origin = calculatedFrame.origin;
 	[_popoverWindow setFrame:newFrame display:YES animate:NO]; // Set the frame of the window
