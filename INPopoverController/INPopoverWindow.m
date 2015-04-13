@@ -48,12 +48,6 @@
 	return NSInsetRect(contentRect, -arrowHeight, -arrowHeight);
 }
 
-// Allow the popover to become the key window
-- (BOOL)canBecomeKeyWindow
-{
-	return _canBecomeKeyWindow;
-}
-
 - (BOOL)canBecomeMainWindow
 {
 	return NO;
