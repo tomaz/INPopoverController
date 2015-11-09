@@ -375,6 +375,7 @@
 		case INPopoverArrowDirectionUp:
 		case INPopoverArrowDirectionDown:
 			newDirection = arrowLeft ? INPopoverArrowDirectionLeft : INPopoverArrowDirectionRight;
+			break;
 		case INPopoverArrowDirectionLeft:
 		case INPopoverArrowDirectionRight:
 			newDirection = arrowUp ? INPopoverArrowDirectionUp : INPopoverArrowDirectionDown;
